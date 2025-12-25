@@ -7,7 +7,7 @@ gateways:
 defaultPort: "8080"
 expose:
   - prefix: /
-    reRewrite: /
+    uriRewrite: /
     serviceName: "my-service"
     overrideSvc: "my-service-real-name"
     overrideNamespace: "my-real-namespace"

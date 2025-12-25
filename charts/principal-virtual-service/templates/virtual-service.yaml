@@ -17,9 +17,9 @@ spec:
     - match:
         - uri:
             prefix: {{ .prefix | quote }}
-          {{- if .reRewrite }}
+          {{- if .uriRewrite }}
           rewrite:
-            uri: {{ .reRewrite | quote }}
+            uri: {{ .uriRewrite | quote }}
           {{- end }}
       route:
         - destination:
