@@ -17,10 +17,10 @@ spec:
     - match:
         - uri:
             prefix: {{ .prefix | quote }}
-          {{- if .uriRewrite }}
-          rewrite:
-            uri: {{ .uriRewrite | quote }}
-          {{- end }}
+      {{- if .uriRewrite }}
+      rewrite:
+        uri: {{ .uriRewrite | quote }}
+      {{- end }}
       route:
         - destination:
             {{- if or .overrideNamespace .overrideSvc}}
