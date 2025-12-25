@@ -29,7 +29,7 @@ spec:
       route:
         - destination:
             {{- if or .overrideNamespace .overrideSvc}}
-            host: "{{ .overrideSvc }}-svc.{{ .overrideNamespace }}.svc.cluster.local"
+            host: "{{ .overrideSvc }}.{{ .overrideNamespace }}.svc.cluster.local"
             {{- else }}
             host: "{{ .serviceName }}-svc.{{ .serviceName }}.svc.cluster.local"
             {{- end }}
