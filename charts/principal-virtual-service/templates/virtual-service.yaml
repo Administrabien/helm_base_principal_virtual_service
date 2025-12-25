@@ -16,7 +16,12 @@ spec:
       {{- range .Values.expose }}
     - match:
         - uri:
+            {{- if .prefix }}
             prefix: {{ .prefix | quote }}
+            {{- end }}
+            {{- if .exact }}
+            exact: {{ .exact | quote }}
+            {{- end }}
       {{- if .uriRewrite }}
       rewrite:
         uri: {{ .uriRewrite | quote }}
