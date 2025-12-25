@@ -23,7 +23,11 @@ spec:
           {{- end }}
       route:
         - destination:
+            {{- if or .overrideNamespace .overrideSvc}}
+            host: "{{ .overrideSvc }}-svc.{{ .overrideNamespace }}.svc.cluster.local"
+            {{- else }}
             host: "{{ .serviceName }}-svc.{{ .serviceName }}.svc.cluster.local"
+            {{- end }}
             port:
               {{- if .port }}
               number: {{ .port | int }}
