@@ -1,0 +1,83 @@
+global:
+  appVersion: ""
+  imgPath: ""
+
+
+name:
+replicas:
+revisionHistoryLimit:
+
+serviceMetaData:
+  cluster:
+  service_name:
+
+istioEnabled: false
+canaryEnabled: false
+
+container:
+  port: 8080
+  path: /
+  image:
+    pullPolicy: Always
+    securityContext:
+      allowPrivilegeEscalation: false
+      runAsUser: 1000
+      runAsGroup: 1000
+  command: ["/bin/sh"]
+  args: []
+  livenessProbe:
+    path: actuator/health
+    initialDelaySeconds: 300
+    periodSeconds: 15
+    successThreshold: 1
+    timeoutSeconds: 5
+    failureThreshold: 5
+  readinessProbe:
+    path: actuator/health
+    initialDelaySeconds: 300
+    periodSeconds: 15
+    successThreshold: 1
+    timeoutSeconds: 5
+    failureThreshold: 5
+  startupProbe:
+    path: actuator/health
+    initialDelaySeconds: 300
+    periodSeconds: 15
+    successThreshold: 1
+    timeoutSeconds: 5
+    failureThreshold: 5
+  resources:
+    cpu:
+      limits:
+      request:
+    memory:
+      limits:
+      request:
+  gateway:
+    enabled: false
+    annotations: {}
+    tlsEnabled: false
+    tlsIsProduction: false
+    ingressClass: "nginx"
+    host: "administrabien.cl"
+    contextBasePath: /
+    pathType: "prefix"
+  virtualService:
+    enabled: false
+    hosts: [
+      "administrabien.cl"
+    ]
+    gateway:
+    uriPrefix: /
+    uriReWrite:
+  envs:
+
+  tolerations: []
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 50
+  averageRequestPerSeconds: 3000m
