@@ -17,8 +17,10 @@ spec:
     - match:
         - uri:
             prefix: {{ .prefix | quote }}
+          {{- if .reRewrite }}
           rewrite:
             uri: {{ .reRewrite | quote }}
+          {{- end }}
       route:
         - destination:
             host: "{{ .serviceName }}-svc.{{ .serviceName }}.svc.cluster.local"
