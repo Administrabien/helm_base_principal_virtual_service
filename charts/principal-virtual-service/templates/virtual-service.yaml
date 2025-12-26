@@ -19,6 +19,7 @@ spec:
             {{- if .prefix }}
             prefix: {{ .prefix | quote }}
             {{- end }}
+        - uri:
             {{- if .exact }}
             exact: {{ .exact | quote }}
             {{- end }}
