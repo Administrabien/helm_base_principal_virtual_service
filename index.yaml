@@ -3,6 +3,25 @@ entries:
   principal-virtual-service:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-12-26T10:26:42.976082774Z"
+    description: Chart para el principal virtual service
+    digest: fa1751497610cad5aa22c6e6975b333389b23adc4c5668e49a8b1ca471e3b9bc
+    keywords:
+    - principal-virtual-service
+    - microservice
+    - java
+    - nodejs
+    - base
+    maintainers:
+    - email: fcovillegast@gmail.com
+      name: Francisco
+    name: principal-virtual-service
+    type: application
+    urls:
+    - https://github.com/Administrabien/helm_base_principal_virtual_service/releases/download/principal-virtual-service-0.0.8/principal-virtual-service-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-12-25T22:46:28.624880133Z"
     description: Chart para el principal virtual service
     digest: a56e10e07c5fab933c6bd3af1c4738ae44d5db235a5606e0e62718cbf0698a64
@@ -114,4 +133,4 @@ entries:
     urls:
     - https://github.com/Administrabien/helm_base_principal_virtual_service/releases/download/principal-virtual-service-0.0.2/principal-virtual-service-0.0.2.tgz
     version: 0.0.2
-generated: "2025-12-25T22:46:28.624910029Z"
+generated: "2025-12-26T10:26:42.976129723Z"
