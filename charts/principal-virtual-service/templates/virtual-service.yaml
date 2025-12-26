@@ -14,7 +14,12 @@ spec:
     {{- end }}
   http:
       {{- range .Values.expose }}
-    - match:
+      {{- if or .overrideSvc}}
+    - name: "Virtual service rules for service: {{ .overrideSvc }}"
+      {{- else }}
+    - name: "Virtual service rules for service: {{ .serviceName }}"
+      {{- end }}
+      match:
         - uri:
             {{- if .prefix }}
             prefix: {{ .prefix | quote }}
