@@ -37,6 +37,6 @@ spec:
               {{- if .port }}
               number: {{ .port | int }}
               {{- else }}
-              number: {{ $.Values.defaultPort }}
+              number: {{ $.Values.defaultPort | int }}
               {{- end }}
       {{- end }}
