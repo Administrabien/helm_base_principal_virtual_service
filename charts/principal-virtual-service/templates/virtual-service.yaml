@@ -34,6 +34,14 @@ spec:
       rewrite:
         uri: {{ .uriRewrite | quote }}
       {{- end }}
+      {{- if .headers.set }}
+      headers:
+        request:
+          set:
+            {{- range $key, $value := .headers.set }}
+            {{ $key }}: {{ $value | quote }}
+            {{- end }}
+      {{- end }}
       route:
         - destination:
             {{- if or .overrideNamespace .overrideSvc}}

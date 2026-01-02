@@ -12,3 +12,5 @@ expose:
     overrideSvc: "my-service-real-name"
     overrideNamespace: "my-real-namespace"
     port: "0"
+    headers:
+      set:
