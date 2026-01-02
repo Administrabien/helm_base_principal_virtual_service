@@ -2,6 +2,7 @@
 name: "principal"
 hosts:
   - "administrabien.cl"
+istioNamespace: "istio-ingress"
 gateways:
   - "istio-ingress/istioingress-gateway"
 defaultPort: "8080"

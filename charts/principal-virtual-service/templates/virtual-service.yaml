@@ -13,6 +13,14 @@ spec:
     - {{ . }}
     {{- end }}
   http:
+    - match:
+        - uri:
+            prefix: /.well-known/acme-challenge/
+      route:
+        - destination:
+            host: {{ .Values.name }}-cert-manager-solver.{{ .Values.istioNamespace }}.svc.cluster.local
+            port:
+              number: 8089
       {{- range .Values.expose }}
     - match:
         - uri:
