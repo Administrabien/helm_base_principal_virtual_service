@@ -1,11 +1,9 @@
 
-name: "principal"
+name:
 hosts:
-  - "administrabien.cl"
-istioNamespace: "istio-ingress"
+istioNamespace:
 gateways:
-  - "istio-ingress/istioingress-gateway"
-defaultPort: "8080"
+defaultPort:
 expose:
   - prefix: /
     exact:
