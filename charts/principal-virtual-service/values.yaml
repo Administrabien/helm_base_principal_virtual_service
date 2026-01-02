@@ -1,7 +1,6 @@
 
 name:
 hosts:
-istioNamespace:
 gateways:
 defaultPort:
 expose:
